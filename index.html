@@ -49,11 +49,18 @@
             border-radius: 0px; /* Bordes redondeados */
         }
 
-        /* Estilos para el botón de WhatsApp */
-        .whatsapp-button {
+        /* Contenedor para los botones */
+        .button-container {
             position: fixed;
             bottom: 20px; /* Distancia desde el fondo de la página */
-            right: 20px; /* Distancia desde el lado derecho */
+            left: 50%; /* Centrado horizontalmente */
+            transform: translateX(-50%); /* Ajustar para centrar */
+            display: flex; /* Para colocar botones uno al lado del otro */
+            gap: 10px; /* Espacio entre los botones */
+        }
+
+        /* Estilos para el botón de WhatsApp */
+        .whatsapp-button {
             background-color: #25D366; /* Color de WhatsApp */
             color: white;
             border: none;
@@ -80,10 +87,6 @@
 
         /* Estilos para el botón de Instagram */
         .instagram-button {
-            position: fixed;
-            bottom: 20px; /* Distancia desde el fondo de la página */
-            left: 50%; /* Centrado horizontalmente */
-            transform: translateX(-50%); /* Ajustar para centrar */
             background-color: transparent; /* Sin color de fondo */
             color: #E4405F; /* Color de Instagram */
             border: none;
@@ -134,16 +137,20 @@
     <!-- Incrustación de la página externa -->
     <iframe src="https://www.catalogospromocionales.com/seccion/inicio.html" title="Página incrustada"></iframe>
 
-    <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
-    <a href="https://wa.me/573332381376" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
-    </a>
+    <!-- Contenedor para los botones de WhatsApp e Instagram -->
+    <div class="button-container">
+        <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
+        <a href="https://wa.me/573332381376" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
+        </a>
 
-    <!-- Botón flotante de Instagram con el logo de Instagram centrado -->
-    <a href="https://www.instagram.com/gemmapromocol/" class="instagram-button" target="_blank">
-        <i class="fab fa-instagram"></i> <span>Síguenos</span>
-    </a>
+        <!-- Botón flotante de Instagram con el logo de Instagram centrado -->
+        <a href="https://www.instagram.com/gemmapromocol/" class="instagram-button" target="_blank">
+            <i class="fab fa-instagram"></i> <span>Síguenos</span>
+        </a>
+    </div>
 
 </body>
 </html>
+
 
