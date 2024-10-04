@@ -112,6 +112,20 @@
             color: #C13584; /* Cambia el color al pasar el cursor */
         }
 
+        /* Estilos para el símbolo en dispositivos móviles */
+        .symbolo-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            z-index: 1000;
+            display: none; /* No mostrar en dispositivos no móviles */
+        }
+
+        .symbolo {
+            height: 40px; /* Ajustar el tamaño del símbolo */
+        }
+
         /* Media Query para dispositivos móviles */
         @media (max-width: 600px) {
             .logo {
@@ -119,6 +133,9 @@
             }
             .overlay {
                 height: 25px; /* Ajustar altura de la superposición en móviles */
+            }
+            .symbolo-container {
+                display: block; /* Mostrar el símbolo en móviles */
             }
         }
     </style>
@@ -135,7 +152,7 @@
     <div class="button-bar">
         <!-- Contenedor del logo en la parte inferior izquierda -->
         <div class="logo-container">
-            <img src="Logo1.png" alt="Logo de la Marca" class="logo">
+            <img src="logo1.png" alt="Logo de la Marca" class="logo">
         </div>
 
         <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
@@ -149,6 +166,10 @@
         </a>
     </div>
 
+    <!-- Contenedor para el símbolo en la esquina inferior izquierda en dispositivos móviles -->
+    <div class="symbolo-container">
+        <img src="simbolo.png" alt="Símbolo" class="symbolo">
+    </div>
+
 </body>
 </html>
-
