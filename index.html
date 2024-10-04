@@ -36,19 +36,6 @@
             margin-top: 35px; /* Para dejar espacio a la capa de superposición */
         }
 
-        /* Estilos para el logo de la marca en la parte inferior izquierda */
-        .logo-container {
-            position: fixed; /* Fijo para que se mantenga en su lugar */
-            bottom: 60px; /* Distancia desde el fondo de la página */
-            left: 20px; /* Distancia desde el lado izquierdo */
-            z-index: 1000; /* Asegura que el logo esté por encima de otros elementos */
-        }
-
-        .logo {
-            height: 40px; /* Ajusta la altura del logo según lo que necesites */
-            border-radius: 0px; /* Bordes redondeados */
-        }
-
         /* Contenedor para la barra de superposición en la parte inferior */
         .button-bar {
             position: fixed;
@@ -57,9 +44,19 @@
             width: 100%; /* Ocupa todo el ancho */
             background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
             display: flex; /* Para colocar botones uno al lado del otro */
-            justify-content: center; /* Centra los botones */
+            align-items: center; /* Alinear verticalmente los elementos */
             padding: 10px 0; /* Espacio interno */
             z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        }
+
+        /* Estilos para el logo de la marca en la parte inferior izquierda */
+        .logo-container {
+            margin-left: 20px; /* Distancia desde el lado izquierdo */
+        }
+
+        .logo {
+            height: 40px; /* Ajusta la altura del logo según lo que necesites */
+            border-radius: 0px; /* Bordes redondeados */
         }
 
         /* Estilos para el botón de WhatsApp */
@@ -75,7 +72,6 @@
             justify-content: center;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
             text-decoration: none; /* Quitar el subrayado */
             font-weight: bold; /* Hacer el texto en negrita */
             transition: box-shadow 0.3s ease; /* Suavizar la transición de la sombra */
@@ -101,7 +97,6 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 1000;
             text-decoration: none;
             font-weight: bold;
             margin: 0 5px; /* Margen entre botones */
@@ -117,7 +112,7 @@
         /* Media Query para dispositivos móviles */
         @media (max-width: 600px) {
             .logo {
-                height: 30px; /* Ajustar tamaño del logo en móviles */
+                display: none; /* Ocultar el logo en dispositivos móviles */
             }
             .overlay {
                 height: 25px; /* Ajustar altura de la superposición en móviles */
@@ -130,16 +125,16 @@
     <!-- Capa de superposición en la parte superior -->
     <div class="overlay"></div>
 
-    <!-- Contenedor del logo en la parte inferior izquierda -->
-    <div class="logo-container">
-        <img src="Logo1.png" alt="Logo de la Marca" class="logo">
-    </div>
-
     <!-- Incrustación de la página externa -->
     <iframe src="https://www.catalogospromocionales.com/seccion/inicio.html" title="Página incrustada"></iframe>
 
     <!-- Contenedor para la barra de superposición en la parte inferior -->
     <div class="button-bar">
+        <!-- Contenedor del logo en la parte inferior izquierda -->
+        <div class="logo-container">
+            <img src="logo1.png" alt="Logo de la Marca" class="logo">
+        </div>
+
         <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
         <a href="https://wa.me/573332381376" class="whatsapp-button" target="_blank">
             <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
@@ -153,5 +148,4 @@
 
 </body>
 </html>
-
 
