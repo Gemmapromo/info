@@ -13,31 +13,33 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Oculta el scroll en el body */
         }
 
         /* Estilos para la capa de superposición en la parte superior */
         .overlay {
-            position: absolute; /* Cambiado a absolute para que se mueva con el scroll */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 35px; /* Altura inicial de la superposición */
             background-color: white; /* Color de la superposición */
             z-index: 1000; /* Asegura que esté por encima de otros elementos */
-            transition: height 0.2s ease; /* Suavizar el cambio de altura */
+            transition: height 0.2s ease; /* Transición suave al cambiar de tamaño */
         }
 
         /* Estilos para el iframe */
         iframe {
             width: 100%;
-            height: calc(94vh - 35px); /* Ajustar la altura para que no se superponga con la overlay */
+            height: calc(95vh - 40px); /* Ajustar la altura para que no se superponga con la overlay */
             border: none;
+            margin-top: 35px; /* Para dejar espacio a la capa de superposición */
         }
 
         /* Estilos para el logo de la marca en la parte inferior izquierda */
         .logo-container {
             position: fixed; /* Fijo para que se mantenga en su lugar */
-            bottom: 10px; /* Distancia desde el fondo de la página */
+            bottom: 60px; /* Distancia desde el fondo de la página */
             left: 20px; /* Distancia desde el lado izquierdo */
             z-index: 1000; /* Asegura que el logo esté por encima de otros elementos */
         }
@@ -47,17 +49,27 @@
             border-radius: 0px; /* Bordes redondeados */
         }
 
+        /* Contenedor para la barra de superposición en la parte inferior */
+        .button-bar {
+            position: fixed;
+            bottom: 0; /* Fijo en la parte inferior */
+            left: 0;
+            width: 100%; /* Ocupa todo el ancho */
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
+            display: flex; /* Para colocar botones uno al lado del otro */
+            justify-content: center; /* Centra los botones */
+            padding: 10px 0; /* Espacio interno */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        }
+
         /* Estilos para el botón de WhatsApp */
         .whatsapp-button {
-            position: fixed;
-            bottom: 20px; /* Distancia desde el fondo de la página */
-            right: 20px; /* Distancia desde el lado derecho */
             background-color: #25D366; /* Color de WhatsApp */
             color: white;
             border: none;
             border-radius: 30px; /* Bordes completamente redondeados */
-            padding: 10px 20px; /* Espaciado interno para que el texto se vea bien */
-            font-size: 18px; /* Tamaño del texto */
+            padding: 10px 15px; /* Espaciado interno para que el texto se vea bien */
+            font-size: 16px; /* Tamaño del texto ajustado para móvil */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,27 +79,24 @@
             text-decoration: none; /* Quitar el subrayado */
             font-weight: bold; /* Hacer el texto en negrita */
             transition: box-shadow 0.3s ease; /* Suavizar la transición de la sombra */
+            margin: 0 5px; /* Margen entre botones */
         }
         .whatsapp-button:hover {
             box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra al pasar el cursor */
         }
         .whatsapp-button i {
-            font-size: 24px;
-            margin-right: 10px; /* Espacio entre el logo de WhatsApp y el texto */
+            font-size: 20px; /* Tamaño de icono ajustado */
+            margin-right: 5px; /* Espacio entre el logo de WhatsApp y el texto */
         }
 
         /* Estilos para el botón de Instagram */
         .instagram-button {
-            position: fixed;
-            bottom: 20px; /* Distancia desde el fondo de la página */
-            left: 50%; /* Centrado horizontalmente */
-            transform: translateX(-50%); /* Ajustar para centrar */
             background-color: transparent; /* Sin color de fondo */
             color: #E4405F; /* Color de Instagram */
             border: none;
             border-radius: 30px;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 10px 15px; /* Espaciado interno para que el texto se vea bien */
+            font-size: 16px; /* Tamaño del texto ajustado para móvil */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,13 +104,24 @@
             z-index: 1000;
             text-decoration: none;
             font-weight: bold;
+            margin: 0 5px; /* Margen entre botones */
         }
         .instagram-button i {
-            font-size: 24px;
-            margin-right: 10px; /* Espacio entre el logo y el texto */
+            font-size: 20px; /* Tamaño de icono ajustado */
+            margin-right: 5px; /* Espacio entre el logo y el texto */
         }
         .instagram-button:hover {
             color: #C13584; /* Cambia el color al pasar el cursor */
+        }
+
+        /* Media Query para dispositivos móviles */
+        @media (max-width: 600px) {
+            .logo {
+                height: 30px; /* Ajustar tamaño del logo en móviles */
+            }
+            .overlay {
+                height: 25px; /* Ajustar altura de la superposición en móviles */
+            }
         }
     </style>
 </head>
@@ -118,29 +138,20 @@
     <!-- Incrustación de la página externa -->
     <iframe src="https://www.catalogospromocionales.com/seccion/inicio.html" title="Página incrustada"></iframe>
 
-    <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
-    <a href="https://wa.me/573332381376" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
-    </a>
+    <!-- Contenedor para la barra de superposición en la parte inferior -->
+    <div class="button-bar">
+        <!-- Botón flotante de WhatsApp con el logo de WhatsApp -->
+        <a href="https://wa.me/573332381376" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
+        </a>
 
-    <!-- Botón flotante de Instagram con el logo de Instagram centrado -->
-    <a href="https://www.instagram.com/gemmapromocol/" class="instagram-button" target="_blank">
-        <i class="fab fa-instagram"></i> <span>Síguenos</span>
-    </a>
-
-    <script>
-        // Ajustar la posición y tamaño de la superposición al desplazarse
-        window.addEventListener('scroll', function() {
-            const overlay = document.querySelector('.overlay');
-            const scrollTop = window.scrollY;
-
-            // Cambiar la altura de la superposición según el desplazamiento
-            const newHeight = Math.max(20, 35 - scrollTop); // Reducir la altura hasta 20px
-            overlay.style.height = newHeight + 'px';
-            overlay.style.top = scrollTop + 'px'; // Mantener la capa en la parte superior del scroll
-        });
-    </script>
+        <!-- Botón flotante de Instagram con el logo de Instagram centrado -->
+        <a href="https://www.instagram.com/gemmapromocol/" class="instagram-button" target="_blank">
+            <i class="fab fa-instagram"></i> <span>Síguenos</span>
+        </a>
+    </div>
 
 </body>
 </html>
+
 
